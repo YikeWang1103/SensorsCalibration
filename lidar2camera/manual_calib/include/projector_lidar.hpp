@@ -248,7 +248,7 @@ public:
     R1 = cv::Mat(3, 3, CV_32FC1, r);
     T1 = cv::Mat(3, 1, CV_32FC1, t);
     // cv::Mat img = cv::imread(imgName);
-    return ProjectToRawMat(img, K1, D1, R1, T1);
+    return ProjectToFisheyeMat(img, K1, D1, R1, T1);
   }
 
   cv::Mat ProjectToFisheyeMat(cv::Mat img, cv::Mat K, cv::Mat D, cv::Mat R,

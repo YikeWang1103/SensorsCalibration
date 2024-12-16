@@ -11,8 +11,10 @@ then
       --env="DISPLAY" \
       --env="QT_X11_NO_MITSHM=1" \
       --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
-       --volume="${PWD}:/share" \
-       scllovewkf/opencalib:v1 /bin/bash  -c "cd /share;  /bin/bash;"
+      --volume="${PWD}:/share" \
+      --volume="/home/wangyike/Data:/data" \
+      --name="yike_opencalib" \
+       xiaokyan/opencalib:v1 /bin/bash  -c "cd /share;  /bin/bash;"
 else
 
     echo "NVIDIA GPU NOT detected, initialization calibration container"
@@ -21,5 +23,7 @@ else
        --env="QT_X11_NO_MITSHM=1" \
        --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
        --volume="${PWD}:/share" \
-       scllovewkf/opencalib:v1 /bin/bash  -c "cd /share;  /bin/bash;"
+       --volume="/home/wangyike/Data:/data" \
+       --name="yike_opencalib" \
+       xiaokyan/opencalib:v1 /bin/bash  -c "cd /share;  /bin/bash;"
 fi

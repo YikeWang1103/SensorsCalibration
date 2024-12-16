@@ -8,4 +8,6 @@ cmake-build-release/
 __pycache__/
 *.py[cod]
 *$py.class
-
+lidar2camera/manual_calib/data/*
+lidar2camera/manual_calib/calibration_result
+lidar2camera/manual_calib/data/static
