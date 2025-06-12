@@ -109,7 +109,7 @@ public:
     cv::Mat I = cv::Mat::eye(3, 3, CV_32FC1);
     cv::Mat mapX, mapY;
     cv::Mat outImg = cv::Mat(img.size(), CV_32FC3);
-    cv::initUndistortRectifyMap(K, D, I, K, img.size(), CV_32FC1, mapX, mapY);
+    cv::fisheye::initUndistortRectifyMap(K, D, I, K, img.size(), CV_32FC1, mapX, mapY);
     cv::remap(img, outImg, mapX, mapY, cv::INTER_LINEAR);
     cv::Mat dist = oriCloud.rowRange(0, 1).mul(oriCloud.rowRange(0, 1)) +
                    oriCloud.rowRange(1, 2).mul(oriCloud.rowRange(1, 2)) +
